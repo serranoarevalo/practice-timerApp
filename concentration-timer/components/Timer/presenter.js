@@ -3,10 +3,31 @@ import { View, Text, StyleSheet, StatusBar } from "react-native";
 import Button from "../Button";
 
 class Timer extends Component {
+    componentWillReceiveProps(nextProps) {
+        const currentProps = this.props;
+        if (currentProps.isPlaying === false && nextProps.isPlaying === true) {
+            // !currentProps.isPlaying && nextProps.isPlaying
+            // start the interval
+            const timerInterval = setInterval(() => {
+                currentProps.addSecond();
+            }, 1000);
+            this.setState({
+                timerInterval
+            });
+        } else if (
+            currentProps.isPlaying === true &&
+            nextProps.isPlaying === false
+        ) {
+            // currentProps.isPlaying && !nextProps.isPlaying
+            // stop the interval
+            clearInterval(this.state.timerInterval);
+        }
+    }
     render() {
-        const { 
-            isPlaying, 
-            elapsedTime, 
+        console.log(this.props);
+        const {
+            isPlaying,
+            elapsedTime,
             timeDuration,
             startTimer,
             restartTimer,
@@ -16,7 +37,7 @@ class Timer extends Component {
             <View style={styles.container}>
                 <StatusBar barStyle="light-content" />
                 <View style={styles.upper}>
-                    <Text style={styles.time}>30:00</Text>
+                    <Text style={styles.time}>25:00</Text>
                 </View>
                 <View style={styles.lower}>
                     {!isPlaying && (

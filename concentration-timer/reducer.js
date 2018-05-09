@@ -11,29 +11,29 @@ const ADD_SECOND = 'ADD_SECOND';
 function startTimer() {
     return {
         type: START_TIMER
-    }
+    };
 }
 
 function restartTimer() {
     return {
         type: RESTART_TIMER
-    }
+    };
 }
 
 function addSecond() {
     return {
         type: ADD_SECOND
-    }
+    };
 }
 // Reducer
 
-const TIMER_DURATION = 1800;
+const TIMER_DURATION = 1500;
 
 const initialState = {
     isPlaying: false,
     elapsedTime: 0,
     timeDuration: TIMER_DURATION
-}
+};
 
 function reducer(state = initialState, action) {
     switch (action.type) {
@@ -47,13 +47,14 @@ function reducer(state = initialState, action) {
             return state;
     }
 }
+
 // Reducer Functions
 
 function applyStartTimer(state) {
     return {
         ...state,
         isPlaying: true
-    }
+    };
 }
 
 function applyRestartTimer(state) {
@@ -61,7 +62,7 @@ function applyRestartTimer(state) {
         ...state,
         isPlaying: false,
         elapsedTime: 0
-    }
+    };
 }
 
 function applyAddSecond(state) {
