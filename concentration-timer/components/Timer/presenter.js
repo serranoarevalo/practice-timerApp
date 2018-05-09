@@ -51,6 +51,14 @@ class Timer extends Component {
                     <Text style={styles.time}>
                     {formatTime(timerDuration - elapsedTime)}</Text>
                 </View>
+                <View style={styles.middle}>
+                    <Text style={styles.maxim}>
+                    Target, Full Speed, 2 Months
+                    </Text>
+                    <Text style={styles.sentence}>
+                    Concentrate while the timer is playing
+                    </Text>
+                </View>
                 <View style={styles.lower}>
                     {!isPlaying && (
                         <Button iconName="play-circle" onPress={startTimer} />
@@ -71,8 +79,25 @@ const styles = StyleSheet.create({
     },
     upper: {
         flex: 2,
+        justifyContent: "flex-end",
+        alignItems: "center"
+    },
+    middle: {
+        flex:1,
         justifyContent: "center",
         alignItems: "center"
+    },
+    maxim: {
+        color: "white",
+        fontSize: 25,
+        fontWeight: "400",
+        textAlign: "center"
+    },
+    sentence: {
+        color: "white",
+        fontSize: 20,
+        fontWeight: "200",
+        textAlign: "center"
     },
     lower: {
         flex: 1,
