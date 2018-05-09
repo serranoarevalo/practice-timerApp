@@ -9,13 +9,14 @@ class Timer extends Component {
             elapsedTime, 
             timeDuration,
             startTimer,
-            restartTimer
+            restartTimer,
+            addSecond
         } = this.props;
         return (
             <View style={styles.container}>
                 <StatusBar barStyle="light-content" />
                 <View style={styles.upper}>
-                    <Text style={styles.time}>25:00</Text>
+                    <Text style={styles.time}>30:00</Text>
                 </View>
                 <View style={styles.lower}>
                     {!isPlaying && (
