@@ -1,4 +1,6 @@
 import { connect } from 'react-redux';
+import { bindActionCreators } from "redux";
+import { actionCreators as concentrationActions } from '../../reducer';
 import Timer from './presenter';
 
 
@@ -11,4 +13,12 @@ function mapStateToProps(state) {
     };
 }
 
-export default connect(mapStateToProps)(Timer);
+function mapDispatchToProps(dispatch) {
+    return {
+        startTimer: bindActionCreators(concentrationActions.startTimer, dispatch),
+        restartTimer: bindActionCreators(concentrationActions.restartTimer, dispatch)
+    };
+}
+
+
+export default connect(mapStateToProps, mapDispatchToProps)(Timer);
