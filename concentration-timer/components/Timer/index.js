@@ -5,7 +5,7 @@ class Timer extends Component {
     render() {
         return (
             <View style={styles.container}>
-                <StatusBar barStyle={"light-content"} />
+                <StatusBar barStyle="light-content" />
                 <View style={styles.upper}>
                     <Text style={styles.time}>25:00</Text>
                 </View>
