@@ -32,7 +32,7 @@ const TIMER_DURATION = 1500;
 const initialState = {
     isPlaying: false,
     elapsedTime: 0,
-    timeDuration: TIMER_DURATION
+    timerDuration: TIMER_DURATION
 };
 
 function reducer(state = initialState, action) {
