@@ -25,6 +25,7 @@ function addSecond() {
         type: ADD_SECOND
     };
 }
+
 // Reducer
 
 const TIMER_DURATION = 3;
@@ -82,12 +83,13 @@ function applyAddSecond(state) {
     }
 }
 
+
 // Export Action Creators
 
 const actionCreators = {
     startTimer,
     restartTimer,
-    addSecond
+    addSecond,
 };
 
 export { actionCreators };

@@ -45,6 +45,7 @@ class Timer extends Component {
       restartTimer,
       addSecond
     } = this.props;
+    
     return (
       <View style={styles.container}>
         <StatusBar barStyle="light-content" />
