@@ -27,12 +27,14 @@ function addSecond() {
 }
 // Reducer
 
-const TIMER_DURATION = 1500;
+const TIMER_DURATION = 3;
+const TIMER_COUNT = 0;
 
 const initialState = {
     isPlaying: false,
     elapsedTime: 0,
-    timerDuration: TIMER_DURATION
+    timerDuration: TIMER_DURATION,
+    timerCount: TIMER_COUNT
 };
 
 function reducer(state = initialState, action) {
@@ -74,7 +76,8 @@ function applyAddSecond(state) {
     } else {
         return {
             ...state,
-            isPlaying: false
+            isPlaying: false,
+            timerCount: state.timerCount + 1,
         };
     }
 }

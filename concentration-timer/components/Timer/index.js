@@ -5,11 +5,12 @@ import Timer from './presenter';
 
 
 function mapStateToProps(state) {
-    const { isPlaying, elapsedTime, timerDuration } = state;
+    const { isPlaying, elapsedTime, timerDuration, timerCount } = state;
     return {
         isPlaying,
         elapsedTime,
-        timerDuration
+        timerDuration,
+        timerCount
     };
 }
 
