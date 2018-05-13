@@ -78,8 +78,8 @@ function applyAddSecond(state, action) {
   } else {
     return {
       ...state,
-      isPlaying: false
-      // timerCount: state.timerCount + 1,
+      isPlaying: false,
+      elapsendTime: TIMER_DURATION
     };
   }
 }
